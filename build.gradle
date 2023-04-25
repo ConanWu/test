@@ -1,0 +1,42 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.4'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.lin'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+	maven { name "Alibaba" ; url 'https://maven.aliyun.com/repository/public' }
+}
+
+configurations {
+	cucumberRuntime {
+		extendsFrom testImplementation
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+//	cucumber
+	implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.11.0'
+	implementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.11.0'
+	implementation group: 'io.cucumber', name: 'cucumber-core', version: '7.11.0'
+	implementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.2'
+
+    //assertJ
+	testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
+	//report
+	implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.10.0'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
