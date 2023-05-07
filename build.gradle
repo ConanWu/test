@@ -34,6 +34,8 @@ dependencies {
     //assertJ
 	testImplementation group: 'org.assertj', name: 'assertj-core', version: '3.24.2'
 	//report
+	// https://mvnrepository.com/artifact/com.aventstack/extentreports
+	implementation 'com.aventstack:extentreports:5.0.9'
 	implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.10.0'
 }
 
