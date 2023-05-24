@@ -1,13 +1,13 @@
 package com.lin.stepDefinitions;
 
-import com.lin.test.framework.AbstractStepDefinition;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class StepDefinitions extends AbstractStepDefinition {
+
+public class StepDefinitions extends BaseStepDefinitions {
     private int a;
     private int b;
     private int result;
@@ -15,6 +15,7 @@ public class StepDefinitions extends AbstractStepDefinition {
     @Given("I have two numbers {string} and {string}")
     public void i_have_two_numbers_and(String string, String string2) {
         // Write code here that turns the phrase above into concrete actions
+        System.out.println(service1());
         this.a=Integer.valueOf(string);
         this.b=Integer.valueOf(string2);
     }
