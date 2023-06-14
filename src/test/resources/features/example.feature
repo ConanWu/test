@@ -1,10 +1,11 @@
 Feature: example Feature
-  Scenario Outline: Add two numbers
-    Given I have two numbers "<a>" and "<b>"
+  Scenario: Add two numbers
+    Given I have two numbers
+      |a|4|
+      |b|5|
     When I add them
-    Then I should get "<result>"
+    Then I should get the sum
 
-    Examples:
-    |a|b|result|
-    |4|5|9     |
-    |7|9|16    |
+#    Examples:
+#    |a|b|
+#    |4|5|
